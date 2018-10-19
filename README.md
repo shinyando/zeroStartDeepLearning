@@ -1,0 +1,2 @@
+# zeroStartDeepLearning
+ゼロから作るDeepLearningのソース
