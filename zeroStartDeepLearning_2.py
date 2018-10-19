@@ -3,31 +3,10 @@
 """
 Created on Mon Oct 15 20:49:04 2018
 
-@author: andoshinya
+@author: ando
 """
 
 import numpy as np
-
-def AND(x1,x2):
-    w1,w2,theta=0.5,0.5,0.7
-    tmp=x1*w1+x2*w2
-    if tmp <= theta:
-        return 0
-    elif tmp>theta:
-        return 1
-
-print("ANDゲートの結果")
-print(AND(0,0)) #0が表示される
-print(AND(1,0)) #0が表示される
-print(AND(0,1)) #0が表示される
-print(AND(1,1)) #1が表示される
-
-
-print("新しいANDゲートの記載方法")
-
-x=np.array([0,1])#入力
-w=np.array([0.5,0.5])#重み
-b=-0.7#バイアス
 
 def AND(x1,x2):
     x=np.array([x1,x2])
@@ -39,6 +18,7 @@ def AND(x1,x2):
     else:
         return 1
 
+print("ANDゲートの結果")
 print(AND(0,0)) #0が表示される
 print(AND(1,0)) #0が表示される
 print(AND(0,1)) #0が表示される
