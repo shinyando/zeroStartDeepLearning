@@ -1,2 +1,3 @@
 # zeroStartDeepLearning
 ゼロから作るDeepLearningのソース
+始めてのPython実装＆GitHub
