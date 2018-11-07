@@ -132,7 +132,6 @@ def function_tmp2(x1):
     return 3.0**2 + x1 ** 2
 print(numerical_diff(function_tmp2,4.0))
 
-
 #4.4 勾配 gradient 全ての変数の偏微分をベクトルとしてまとめたもの
 def numerical_gradient(f,x):
     h =1e-4 #0.0001
@@ -220,6 +219,35 @@ print(gradient_descent(function_2,init_x=init_x,lr=10.0,step_num=100)) #大き�
 #学習率が小さすぎる例
 init_x = np.array([-3.0,4.0])
 print(gradient_descent(function_2,init_x=init_x,lr=1e-10,step_num=100)) #ほぼ変化なし
+
+#4.4.2ニューラルネットワークに対する勾配
+class simpleNet:
+    def __init__(self):
+        self.W = np.random.randn(2,3) #ガウス分布で初期化
+    
+    def predict(self,x):
+        return np.dot(x,self.W)
+
+    def loss(self,x,t):
+        z=self.predict(x)
+        y=softmax(x)
+        loss = cross_entropy_error(y,t)
+
+        return loss
+
+net = simpleNet()
+print(net.W) #重みパラメータ
+
+x = np.array([0.6,0.9])
+p=net.predict(x)
+print(p)
+
+t=np.array([0,0,1]) #正解ラベル
+print(net.loss(x,t)
+
+f = lambda w: net.loss(x,t)
+dW=numerical_gradient(f,net.W)
+print(dW)
 
 
 
